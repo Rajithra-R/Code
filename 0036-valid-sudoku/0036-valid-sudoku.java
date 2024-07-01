@@ -6,7 +6,12 @@ class Solution {
             for(int j=0;j<9;j++)
             {
                 if(board[i][j] != '.'){    // if that particular element is not empty then only enter the loop
-                if(!h.add("row"+i+board[i][j]) || !h.add("col"+j+board[i][j]) || !h.add("box"+3*(i/3)+j/3+board[i][j]))
+                String rowEntry = "row" + i + board[i][j]; // Row constraint
+                String colEntry = "col" + j + board[i][j]; // Column constraint
+                String boxEntry = "box" + (i / 3) * 3 + (j / 3) + board[i][j]; // Box constraint
+                    
+                // If any entry is already in the HashSet, the board is invalid
+                if(!h.add(rowEntry) || !h.add(colEntry) || !h.add(boxEntry)) 
                 {
                     return false;
                 }
