@@ -1,21 +1,24 @@
 class Solution {
     public int characterReplacement(String s, int k) {
-        int max = 0;
         int left = 0;
         int right = 0;
-        int[] freq = new int[26];
-        for(right = 0;right<s.length();right++)
+        int maxlen = 0;
+        int maxrepcount = 0;
+        HashMap<Character,Integer> h = new HashMap<>();
+        for(right = 0; right < s.length();right++)
         {
-             freq[s.charAt(right) - 'A']++;
-            max= Math.max(max,freq[s.charAt(right) - 'A']);
-            // shrink window by decreasing count and increasing left
-            if(max + k < right - left + 1)
+            char c = s.charAt(right);
+            h.put(c,h.getOrDefault(c,0)+1);
+            maxrepcount = Math.max(maxrepcount,h.get(c));   // get the cur count or max count
+           //  window = right - left + 1;
+            int nonrep = (right - left + 1 )- maxrepcount;
+            if(nonrep > k) // slide the window
             {
-                freq[s.charAt(left) - 'A']--;
+                h.put(s.charAt(left),h.get(s.charAt(left)) - 1); // subtract the count 
                 left++;
             }
-            
+            maxlen = Math.max(maxlen,right - left +1);
         }
-        return right - left;
+        return maxlen;
     }
 }
