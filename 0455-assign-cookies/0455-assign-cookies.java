@@ -17,7 +17,7 @@ class Solution {
         Arrays.sort(s);
         while(left < m && right < n ) // traverse the size array till last
         {
-            if(g[right] <= s[left]) // that means that size can satify the greed factor
+            if(s[left] >= g[right]) // that means that size can satify the greed factor
             {
                 right++;
             }
