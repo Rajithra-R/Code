@@ -12,7 +12,7 @@ class Solution {
             if (i != n1 && (j == n2 || nums1[i] < nums2[j])) {
                 m2 = nums1[i];
                 i++;
-            } else {
+            } else {  // i == n1 || nums2[j] < nums1[i]
                 m2 = nums2[j];
                 j++;
             }
