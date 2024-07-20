@@ -16,7 +16,8 @@ class Solution {
         }
         while(count < n) // all the remaining elements
         {
-            nums[count++] = 0;
+            nums[count] = 0;
+            count++;
         }
     }
 }
