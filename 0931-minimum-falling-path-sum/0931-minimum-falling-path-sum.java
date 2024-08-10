@@ -11,14 +11,14 @@ class Solution {
         // Fill the dp array
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                int ld = matrix[i][j] + dp[i-1][j]; // Same column from previous row
+                int ld = matrix[i][j] + dp[i-1][j]; //add the current element with the  element in  previous row
                 
                 if (j - 1 >= 0) {
-                    ld = Math.min(ld, matrix[i][j] + dp[i-1][j-1]); // Left diagonal from previous row
+                    ld = Math.min(ld, matrix[i][j] + dp[i-1][j-1]); //add the current element with the  element in the Left diagonal 
                 }
                 
                 if (j + 1 < n) {
-                    ld = Math.min(ld, matrix[i][j] + dp[i-1][j+1]); // Right diagonal from previous row
+                    ld = Math.min(ld, matrix[i][j] + dp[i-1][j+1]); // add the current element with the  element with Right diagonal 
                 }
                 
                 dp[i][j] = ld;
