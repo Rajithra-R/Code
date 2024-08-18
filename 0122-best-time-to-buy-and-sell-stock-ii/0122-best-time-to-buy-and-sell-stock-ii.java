@@ -4,7 +4,6 @@ class Solution {
         int dp[][] = new int[n+1][2]; // n+2 - since dealing with index +2
         int i = 0;
         if(i == n) return 0;
-      //  if(dp[i][buy] != -1) return dp[i][buy];
          for(i = n - 1; i >= 0; i--) {
             for(int buy = 0; buy <= 1; buy++) {
                 if(buy == 1)
