@@ -16,9 +16,22 @@ class Solution {
                 else // sell
                 {
                     dp[i][buy] = Math.max(prices[i] + dp[i+2][1] , 0 + dp[i+1][0] );// if i is 1st day then i+2 to buy the third day
+                    // only change from code 2 is i+2
                 }
             }
          }
         return dp[0][1];
     }
 }
+
+/*
+u can reduce the inner for loop because buy =1 in one case and buy =0 in next case once u buy then u sell and hance modified loop is 
+            for(i = n - 1; i >= 0; i--) {
+            
+                    dp[i][buy] = Math.max(-prices[i] + dp[i+1][0] , 0 + dp[i+1][1]);
+                
+                
+                    dp[i][buy] = Math.max(prices[i] + dp[i+2][1] , 0 + dp[i+1][0] );// if i is 1st day then i+2 to buy the third day
+         }
+
+*/
