@@ -22,7 +22,8 @@ class Solution {
     public TreeNode construct(int[] preorder,int ub)
     {
         if(i >= preorder.length || preorder[i] > ub) return null;
-        TreeNode root = new TreeNode(preorder[i++]);
+        TreeNode root = new TreeNode(preorder[i]);
+        i++;
         root.left = construct(preorder,root.val);
         root.right = construct(preorder,ub);
         return root;
