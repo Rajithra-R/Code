@@ -1,12 +1,8 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int res[] = new int[2];
-        for(int i=0;i<2;i++)
-        {
-            res[i] = -1;
-        }
-         int k = target;
-    /*    res[0] = StartRange(nums,target);
+        
+       res[0] = StartRange(nums,target);
         res[1] = EndRange(nums,target);
         return res;
     }
@@ -60,8 +56,20 @@ class Solution {
             high = mid - 1;
         }
         }
-        return index;  */
-        for(int i =0;i<nums.length;i++)
+        return index;  
+       
+    }
+    
+}
+
+/*
+        int res[] = new int[2];
+        for(int i=0;i<2;i++)
+        {
+            res[i] = -1;
+        }
+         int k = target;
+          for(int i =0;i<nums.length;i++)
        {
            if(nums[i] == k)
            {
@@ -78,6 +86,4 @@ class Solution {
            }
        }
         return res;
-    }
-    
-}
+*/
