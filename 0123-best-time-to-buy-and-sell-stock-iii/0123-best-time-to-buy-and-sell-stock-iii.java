@@ -1,3 +1,5 @@
+// space optimization
+
 class Solution {
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -30,49 +32,7 @@ class Solution {
 // 1 - buy
 // 0 - dont buy
 
-/*
-        int n = prices.length;
-        if (n == 0) return 0;
-        
-      
-        int[][] cur = new int[2][2];
-        int[][] after = new int[2][2];
-        
-        // optional
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                cur[i][j] = 0;
-                after[i][j] = 0;
-            }
-        }
-        
-        for (int ind = n - 1; ind >= 0; --ind) {
-            for (int buy = 0; buy <= 1; ++buy) {
-                for (int cap = 0; cap <= 1; ++cap) {
-                    if (buy == 1) {
-                        cur[buy][cap] = Math.max(-prices[ind] + after[0][cap], 0 + after[1][cap]);
-                    } else {
-                        cur[buy][cap] = Math.max(prices[ind] + after[1][cap - 1], 0 + after[0][cap]);
-                    }
-                }
-            }
-            // Move cur to after for the next iteration
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < 2; j++) {
-                    after[i][j] = cur[i][j];
-                }
-            }
-        }
-
-        return after[0][1];
-    }
-
-    public static void main(String[] args) {
-        int[] prices = {1, 2, 3, 0, 2};
-        System.out.println("Max Profit: " + maxProfit(prices));
-    }
-}
-*/
+//Tabulation
 /*
 for(int i=n-1;i>=0;i--)
         {
