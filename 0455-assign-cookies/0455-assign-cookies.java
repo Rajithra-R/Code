@@ -3,7 +3,7 @@
 // initially sort both the arrays..
 // maintain 2 pointers for each array
 // and compare if the cookiee can be assigned to the child(i.e greed array) or not
-// if yes then move both the pointers(l++ and r++)
+// if yes then move both the pointers( r++)
 // if not then moove the s's pointer.(l++)
 // finally return the index of the size array when the left ponter reaches the end of the array
 
