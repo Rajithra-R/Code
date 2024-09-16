@@ -2,7 +2,7 @@ class Solution {
     public int[] searchRange(int[] nums, int target) {
         int res[] = new int[2];
         
-       res[0] = StartRange(nums,target);
+        res[0] = StartRange(nums,target);
         res[1] = EndRange(nums,target);
         return res;
     }
@@ -16,8 +16,8 @@ class Solution {
         int mid = (low + high) / 2;
         if(nums[mid] == target)
         {
-            //it would be the start range 
-            //hence move the end value (high) to the left
+            // it would be some repeated numbers too
+            // so fix high as a boundary and and search left....
             index = mid; // because in the nxt step itself we need mid...if mid is returned then the nxt stmt becomes unreachable
             high = mid - 1;
         }
