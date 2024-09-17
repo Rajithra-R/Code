@@ -1,4 +1,6 @@
+
 //O(n * m)
+
 class Solution {
     public String countAndSay(int n) {
         String cur = "1";
