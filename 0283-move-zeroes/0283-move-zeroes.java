@@ -14,10 +14,14 @@ class Solution {
                 count++;
             } 
         }
-        while(count < n) // all the remaining elements
+      /*  while(count < n) // all the remaining elements
         {
             nums[count] = 0;
             count++;
+        } */
+        for(int i=count;i<n;i++)
+        {
+            nums[i] = 0;
         }
     }
 }
