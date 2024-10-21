@@ -16,12 +16,13 @@ class Solution {
             if(num == 1)
             {
                 count++;
+                max_count = Math.max(max_count,count);
+
             }
             else
             {
                 count = 0;
             }
-            max_count = Math.max(max_count,count);
         }
         return max_count;
     }
